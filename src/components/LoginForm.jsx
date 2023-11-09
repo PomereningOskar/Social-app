@@ -37,6 +37,7 @@ const LoginForm = (props) => {
                     setLoginMessage("");
                     props.setUser(res.data);
                     localStorage.setItem('user', JSON.stringify(res.data));
+                    props.onLoginSuccess();
                 }
             })
             .catch((error) => {

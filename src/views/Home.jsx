@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Post from "../components/Post";
 import AddPost from "../components/AddPost";
 import FollowRecommendations from "../components/FollowRecommendations";
+import GetMorePosts from "../components/GetMorePosts"
 
 
 const Home = (props) => {
@@ -54,7 +55,8 @@ const Home = (props) => {
                 {posts.map((post) => {
                     return <Post post={post} key={post.id} user={props.user} setPosts={setPosts} getLatestPosts={getLatestPosts} />;
                 })}
-                <button className="btn loadMore" onClick={getNextPosts}>Load more</button>
+                {/* <button className="btn loadMore" onClick={getNextPosts}>Load more</button> */}
+                <GetMorePosts posts={posts} setPosts={setPosts} />
             </div>
         </div>
     );

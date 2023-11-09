@@ -18,6 +18,7 @@ const PopUp = (props) => {
         setShowPopUp(false);
     };
 
+
     return (
         showPopUp && (
             <div className="popup">
@@ -25,8 +26,8 @@ const PopUp = (props) => {
                     X
                 </button>
                 <p><strong>Already have an account?</strong></p>
-                <LoginForm setUser={props.setUser} />
-                <Link to="/SignUp" className="create">No? Create Account! <strong>Go to SignUp</strong></Link>
+                <LoginForm setUser={props.setUser} onLoginSuccess={handleClose} />
+                <Link to="/SignUp" className="create" onClick={handleClose}>No? Create Account! <strong>Go to SignUp</strong></Link>
             </div>
         )
     );
